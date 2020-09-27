@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  frontend:
+    image: quetwo/mor-practice:latest
+    build:
+      context: frontend/
+    depends_on:
+      - db
+    volumes:
+      - ./frontend/webroot:/var/www
+    ports:
+      - "80:8888"
+    secrets:
+      - admin_password
+  db:
+    image: mysql:5.7
+    env_file:
+      - ./db/setup.txt
+    volumes:
+      - vol_db:/var/lib/mysql
+
+# Mounts
+volumes:
+  vol_db:
+
+# Secrets
+secrets:
+  admin_password:
+    file: ./frontend/admin-password.txt
