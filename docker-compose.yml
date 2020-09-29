@@ -16,7 +16,7 @@ services:
   db:
     image: mysql:5.7
     env_file:
-      - ./db/setup.txt
+      - ./db/secrets.txt
     volumes:
       - vol_db:/var/lib/mysql
 
