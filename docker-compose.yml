@@ -10,7 +10,7 @@ services:
     volumes:
       - ./frontend/webroot:/var/www
     ports:
-      - "80:8888"
+      - "8888:8888"
     secrets:
       - admin_password
   db:
@@ -19,6 +19,8 @@ services:
       - ./db/secrets.txt
     volumes:
       - vol_db:/var/lib/mysql
+    ports:
+      - "3306:3306"
 
 # Mounts
 volumes:

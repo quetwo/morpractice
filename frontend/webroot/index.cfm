@@ -6,3 +6,7 @@
 
 <cfdump var="#test#">
 
+<cfset myUser = entityloadbypk("user",1)>
+
+<cfdump var="#myUser#">
+
