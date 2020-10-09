@@ -19,6 +19,7 @@ services:
       - ./db/secrets.txt
     volumes:
       - vol_db:/var/lib/mysql
+      - ./db/dump:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
 

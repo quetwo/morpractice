@@ -6,8 +6,14 @@ component displayname="User Manager"
 
     public boolean function authUser(username, password)
     {
-        // load user regardless of password
+        // load user based on username, regardless of password
         localUser = entityload("user",{username=arguments.username},true);
+
+        // entityLoad will return an undefined (null) variable if there are no matches.
+        if (!isDefined("localUser"))
+        {
+            return false;
+        }
 
         // verify user password
         if (localUser.verifyUserPassword(arguments.password))
