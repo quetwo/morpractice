@@ -14,7 +14,7 @@
 <cfset myUser.setVerified(true)>
 <cfset myUser.setUserType(99)>
 
-<cfset session.userManager = createObject("component","cf.userManager")>
+<!---<cfset session.userManager = createObject("component","cf.userManager")> --->
 <cfset session.userManager.authUser("admin","password")>
 <cfdump var="#session.userManager.isAuthenticated()#" label="Is Authenticated?">
 <cfset session.userManager.logoutUser()>

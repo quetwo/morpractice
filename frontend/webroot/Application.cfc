@@ -28,8 +28,8 @@ component
 
     void function onSessionStart()
     {
-        //session.userManager = createObject("component","cf.userManager");
-
+        // init user manager which holds authentication info
+        session.userManager = createObject("component","cf.userManager");
     }
 
 }
