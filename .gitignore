@@ -2,3 +2,4 @@ db/secrets.txt
 frontend/admin-password.txt
 *.iml
 .idea/
+frontend/webroot/cf/secrets.cfm

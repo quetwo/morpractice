@@ -32,4 +32,10 @@ component
         session.userManager = createObject("component","cf.userManager");
     }
 
+    boolean function onApplicationStart()
+    {
+        cfinclude(template = 'cf/secrets.cfm');
+        return true;
+    }
+
 }
