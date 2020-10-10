@@ -77,7 +77,7 @@
           <div class="col-lg-5 g-bg-white g-rounded-right-5--lg-up">
             <div class="g-pa-50">
               <!-- Form -->
-              <cfform name="Signup" method="post" format="html" class="g-py-15">
+              <cfform name="Signup" method="post" format="html" class="g-py-15" action="/cf/signUp.cfm">
                 <h2 class="h3 g-color-black mb-4">Signup</h2>
                 <!-- if this next p is removed the form doesn't have the same height as the login element. -->
                 <p class="mb-4">Thank you for signing up. We are excited to have you join. </p>
