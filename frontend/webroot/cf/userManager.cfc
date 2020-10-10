@@ -48,5 +48,39 @@ component displayname="User Manager"
         return variables.userAccount;
     }
 
+    public boolean function signUp(name, username, email, password)
+    {
+        myUser = entityNew("user");
+        myUser.setUsername(arguments.username);
+        myUser.setPassword(arguments.password);
+        myUser.setFullName(arguments.name);
+        myUser.setEmail(arguments.email);
+        myUser.setVerified(true);
+        myUser.setUserType(1);
+        entitySave(myUser);
+        ormFlush();
+
+        // load user based on username, regardless of password
+        localUser = entityload("user",{username=arguments.username},true);
+
+        // entityLoad will return an undefined (null) variable if there are no matches.
+        if (!isDefined("localUser"))
+        {
+            return false;
+        }
+
+        // verify user password
+        if (localUser.verifyUserPassword(arguments.password))
+        {
+            variables.userAccount = localUser;
+            userAuthenticated = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
 }
