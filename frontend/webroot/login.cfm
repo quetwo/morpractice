@@ -7,7 +7,7 @@
             <!-- Heading -->
             <h1 class="g-color-white text-uppercase mb-4">Login or register an account</h1>
             <div class="d-inline-block g-width-35 g-height-2 g-bg-white mb-4"></div>
-            <p class="lead g-color-white">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+            <p class="lead g-color-white">We are happy you are joining us.</p>
             <!-- End Heading -->
           </div>
         </div>
@@ -16,14 +16,20 @@
           <div class="col-lg-5 g-bg-teal g-rounded-left-5--lg-up">
             <div class="g-pa-50">
               <!-- Form -->
-              <form class="g-py-15">
+              <cfform name="InputTypeButtonTest" method="post" format="html" class="g-py-15" action="/cf/authorization.cfm">
                 <h2 class="h3 g-color-white mb-4">Login</h2>
                 <div class="mb-4">
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-white g-color-white"><i class="icon-finance-067 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13" type="email" placeholder="Username">
+                    
+                    <cfinput 
+                        name="UserName" 
+                        type="text" 
+                        class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Username"
+                        >
                   </div>
                 </div>
 
@@ -32,12 +38,22 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-white g-color-white"><i class="icon-communication-062 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13" type="tel" placeholder="Password">
+                    <cfinput 
+                        name="password"
+                        type="password" 
+                        class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Password"
+                        >
                   </div>
                 </div>
 
                 <div class="g-mb-60">
-                  <button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="button">Login</button>
+                  <cfinput 
+                    name="SubmitLogin" 
+                    type="submit" 
+                    class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13"
+                    value="Login"
+                    >
                 </div>
 
                 <div class="text-center g-pos-rel pb-2 g-mb-60">
@@ -53,7 +69,7 @@
                   <i class="mr-3 fa fa-twitter"></i>
                   <span class="g-hidden-xs-down">Login with</span> Twitter
                 </button>
-              </form>
+              </cfform>
               <!-- End Form -->
             </div>
           </div>
@@ -61,16 +77,21 @@
           <div class="col-lg-5 g-bg-white g-rounded-right-5--lg-up">
             <div class="g-pa-50">
               <!-- Form -->
-              <form class="g-py-15">
+              <cfform name="Signup" method="post" format="html" class="g-py-15">
                 <h2 class="h3 g-color-black mb-4">Signup</h2>
-                <p class="mb-4">Profitable contracts, invoices &amp; payments for the best cases!</p>
-
+                <!-- if this next p is removed the form doesn't have the same height as the login element. -->
+                <p class="mb-4">Thank you for signing up. We are excited to have you join. </p>
                 <div class="mb-4">
                   <div class="input-group rounded">
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5"><i class="icon-finance-128 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13" type="email" placeholder="Your name">
+                    <cfinput 
+                        name="name" 
+                        type="text"
+                        class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Your name"
+                        >
                   </div>
                 </div>
 
@@ -79,7 +100,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5"><i class="icon-finance-067 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13" type="email" placeholder="User name">
+                    <cfinput 
+                        name="userName" 
+                        type="text"
+                        class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
+                        placeholder="User name"
+                        >
                   </div>
                 </div>
 
@@ -88,7 +114,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5"><i class="icon-communication-062 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13" type="email" placeholder="Your email">
+                    <cfinput 
+                        name="email" 
+                        type="text"
+                        class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Your email"
+                        >
                   </div>
                 </div>
 
@@ -97,7 +128,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5"><i class="icon-media-094 u-line-icon-pro"></i></span>
                     </div>
-                    <input class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13" type="tel" placeholder="Password">
+                    <cfinput 
+                        name="password" 
+                        type="password"
+                        class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Password"
+                        >
                   </div>
                 </div>
 
@@ -120,9 +156,13 @@
                     Subscribe to our newsletter
                   </label>
                 </div>
-
-                <button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="button">Login</button>
-              </form>
+                <cfinput 
+                    name="SubmitLogin" 
+                    type="submit" 
+                    class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13"
+                    value="Login"
+                    >
+              </cfform>
               <!-- End Form -->
             </div>
           </div>
