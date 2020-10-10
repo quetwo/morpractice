@@ -41,6 +41,10 @@ component displayname="User Manager"
 
     public function getUser()
     {
+        if (!isAuthenticated())
+        {
+            return entityNew("user");
+        }
         return variables.userAccount;
     }
 
