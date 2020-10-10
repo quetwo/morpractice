@@ -35,3 +35,41 @@
     //entitySave(newQuestion);
 
 </cfscript>
+
+
+<!--- basic user info --->
+
+<h1> Baic User Info :</h1>
+<table>
+    <tr>
+        <td>User's Name : </td>
+        <td><cfoutput>#session.userManager.getUser().getFullName()#</cfoutput></td>
+    </tr>
+    <tr>
+        <td>User's Email Address : </td>
+        <td><cfoutput>#session.userManager.getUser().getEmail()#</cfoutput></td>
+    </tr>
+    <tr>
+        <td>User's Phone Number : </td>
+        <td><cfoutput>#session.userManager.getUser().getPhoneNumber()#</cfoutput></td>
+    </tr>
+
+</table>
+
+<!--- List of all Interview Questions --->
+
+<h1> Questions to Ask: </h1>
+<cfset interviewQuestions = entityToQuery(entityload("interviewQuestion"))>
+
+<table>
+<cfoutput query="interviewQuestions">
+    <tr>
+        <td>Question Title : </td>
+        <td>#interviewQuestions.title#</td>
+    </tr>
+    <tr>
+        <td>Question : </td>
+        <td>#interviewQuestions.question#</td>
+    </tr>
+</cfoutput>
+</table>
