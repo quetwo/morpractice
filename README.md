@@ -23,4 +23,8 @@
   - Arguments : None
   - Methods : POST or GET
   - Results : JSON Array of all the questions
+- /api/2020-10-10/telephoneIntegration.cfc?method=startRoboInterview
+  - Arugments : None
+  - Methods : POST
+  - Results : None  (will call user)
   
