@@ -8,11 +8,10 @@
 <cfsavecontent variable="mydebug"><cfdump var="#form#"><cfdump var="#interviewSession.recordingURL#"><cfoutput>#interviewSession.currentQuestion# | #currentQuestion.getQuestion()#</cfoutput></cfsavecontent><cffile action="write" output="#mydebug#" file="test.html">
 
 <cfcontent type="application/json" reset="true"><Response>
-    <Say voice="man" language="en-us"><cfoutput>#currentQuestion.getQuestion()#</cfoutput>
-    </Say>
+    <Say voice="man" language="en-us"><cfoutput>#currentQuestion.getQuestion()#</cfoutput></Say>
     <cfif interviewSession.currentQuestion LT 11>
-        <Record timeout="5" playBeep="true" background="false" trimSilence="true" action="http://3.135.202.150/api/2020-10-10/zang/questions.cfm" method="post" />
+    <Record timeout="5" playBeep="true" background="false" trimSilence="true" action="http://3.135.202.150/api/2020-10-10/zang/questions.cfm" />
     <cfelse>
-        <Record timeout="5" playBeep="true" background="false" trimSilence="true" action="http://3.135.202.150/api/2020-10-10/zang/completeInterview.cfm" method="post" />
+    <Record timeout="5" playBeep="true" background="false" trimSilence="true" action="http://3.135.202.150/api/2020-10-10/zang/completeInterview.cfm" />
     </cfif>
 </Response>
