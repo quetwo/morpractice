@@ -7,6 +7,7 @@ component persistent="true" entityname="user" output="false"
     property name="email" fieldtype="column" type="string";
     property name="verified" fieldtype="column" type="boolean";
     property name="userType" fieldtype="column" type="numeric";
+    property name="phoneNumber" fieldtype="column" type="string";
 
     ///////////////////////////////////////////////////////
     ///  Password functions
