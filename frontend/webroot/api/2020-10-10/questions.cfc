@@ -67,6 +67,23 @@ component
         cfheader(statuscode="200", statustext="OK");
     }
 
+    public array function getTenQuestions()
+    {
+        checkAuth();
+        allQuestions = entityload("interviewQuestion");
+        numQuestions = ArrayLen(allQuestions);
+        finalQuestionList = [];
+        cfheader( name="Content-Type", value="text/html" );
+        for (i=1; i <=10; i++)
+        {
+            thisNumber = randRange(1,numQuestions);
+            arrayAppend(finalQuestionList,allQuestions[thisNumber]);
+            arrayDeleteAt(allQuestions,thisNumber);
+            numQuestions--;
+        }
+        return finalQuestionList;
+    }
+
     /// function to check if the user is authenticated.  We should only be responding to users with a session.
     private void function checkAuth()
     {

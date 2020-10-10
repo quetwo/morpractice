@@ -17,7 +17,6 @@ component displayname="interview session manager"
         myInterviewReturn = createObject("interview");
         arrayEach(mySessionList, function(element,index)
         {
-            writeDump(element.user.getID() EQ userID);
             if(element.user.getID() EQ userID)
             {
                 myInterviewReturn = element;
@@ -34,8 +33,17 @@ component displayname="interview session manager"
     public interview function createNewSession()
     {
         myNewSession = getUserSession(session.userManager.getUser().getID()); // create a session only if one does not exist
-        myNewSession.user = session.userManager.getUser();
-        arrayAppend(application.interviewSessionList,myNewSession);
+        if (!isDefined("myNewSession.user"))
+        {
+            // actually creating a new session.
+            myNewSession.user = session.userManager.getUser();
+            myNewSession.currentQuestionList = invoke("api.2020-10-10.questions","getTenQuestions");
+            arraySort(myNewSession.currentQuestionList,function (e1, e2)
+            {
+               return compare(e1.getID(), e2.getID());
+            });
+            arrayAppend(application.interviewSessionList,myNewSession);
+        }
         return myNewSession;
     }
 
