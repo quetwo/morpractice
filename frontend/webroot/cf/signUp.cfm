@@ -1,5 +1,5 @@
 
-<cfset session.userManager.signUp(form.name, form.userName, form.email, form.password)>
+<cfset session.userManager.signUp(form.name, form.userName, form.email, form.password, form.phone)>
 
 <cfset session.userManager.authUser(form.UserName, form.password)>
 

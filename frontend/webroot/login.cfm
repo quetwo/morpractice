@@ -79,8 +79,6 @@
               <!-- Form -->
               <cfform name="Signup" method="post" format="html" class="g-py-15" action="/cf/signUp.cfm">
                 <h2 class="h3 g-color-black mb-4">Signup</h2>
-                <!-- if this next p is removed the form doesn't have the same height as the login element. -->
-                <p class="mb-4">Thank you for signing up. We are excited to have you join. </p>
                 <div class="mb-4">
                   <div class="input-group rounded">
                     <div class="input-group-prepend">
@@ -119,6 +117,21 @@
                         type="text"
                         class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
                         placeholder="Your email"
+                        >
+                  </div>
+                </div>
+
+
+                <div class="mb-4">
+                  <div class="input-group rounded">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-gray-dark-v5"><i class="icon-phone u-line-icon-pro"></i></span>
+                    </div>
+                    <cfinput 
+                        name="phone" 
+                        type="text"
+                        class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-13"
+                        placeholder="Your phone number"
                         >
                   </div>
                 </div>

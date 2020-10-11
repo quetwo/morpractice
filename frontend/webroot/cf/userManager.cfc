@@ -48,13 +48,14 @@ component displayname="User Manager"
         return variables.userAccount;
     }
 
-    public boolean function signUp(name, username, email, password)
+    public boolean function signUp(name, username, email, password, phoneNumber)
     {
         myUser = entityNew("user");
         myUser.setUsername(arguments.username);
         myUser.setPassword(arguments.password);
         myUser.setFullName(arguments.name);
         myUser.setEmail(arguments.email);
+        myUser.setPhoneNumber(arguments.phoneNumber);
         myUser.setVerified(true);
         myUser.setUserType(1);
         entitySave(myUser);
