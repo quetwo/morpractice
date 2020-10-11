@@ -1,6 +1,6 @@
 <cfscript>
 
-    interviewManager = createObject("cf.interviewSession");
+   interviewManager = createObject("cf.interviewSession");
     interviewManager.init();
     interviewManager.clearAllSessions();
     interviewManager.createNewSession();

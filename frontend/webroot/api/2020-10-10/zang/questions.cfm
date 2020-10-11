@@ -6,7 +6,7 @@
 </cfif>
 <cfset interviewSession.currentQuestion++>
 
-<cfsavecontent variable="mydebug"><cfdump var="#form#"><cfdump var="#interviewSession.recordingURL#"><cfoutput>#interviewSession.currentQuestion# | #currentQuestion.getQuestion()#</cfoutput></cfsavecontent><cffile action="write" output="#mydebug#" file="test.html">
+<cfsavecontent variable="mydebug"><cfdump var="#form#"><cfdump var="#interviewSession.recordingURL#"><cfoutput>#interviewSession.currentQuestion# | #currentQuestion.getQuestion()#</cfoutput></cfsavecontent>
 
 <cfsavecontent variable="output"><Response>
  <Say voice="man" language="en-us"><cfoutput>#currentQuestion.getQuestion()#</cfoutput></Say>
