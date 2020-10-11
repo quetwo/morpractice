@@ -53,6 +53,7 @@ component displayname="interview session manager"
             myNewSession.user = session.userManager.getUser();
             myNewSession.currentQuestion = 0;
             myNewSession.recordingURL = [];
+            myNewSession.conversationID = [];
             myNewSession.currentQuestionList = invoke("api.2020-10-10.questions","getTenQuestions");
             arraySort(myNewSession.currentQuestionList,function (e1, e2)
             {

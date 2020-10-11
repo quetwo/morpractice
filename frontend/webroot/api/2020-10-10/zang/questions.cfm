@@ -2,6 +2,7 @@
 <cfset currentQuestion = interviewSession.CURRENTQUESTIONLIST[interviewSession.currentQuestion + 1]>
 <cfif isDefined("form.RecordingUrl")>
     <cfset interviewSession.recordingURL[interviewSession.currentQuestion] = form.recordingurl>
+    <cfset telephone = invoke("api.2020-10-10.telephoneIntegration","submitAnalysis", {recordingURL=form.recordingurl, currentQuestionNum=interviewSession.currentQuestion, phoneNumber=form.to})>
 </cfif>
 <cfset interviewSession.currentQuestion++>
 
