@@ -25,7 +25,7 @@ component
 
     public function submitAnalysis(recordingURL,currentQuestionNum, phoneNumber)
     {
-        cfhttp(method="POST", url="https://api.symbl.ai/v1/process/audio/url")
+        cfhttp(method="POST", url="https://api.symbl.ai/v1/process/audio/url", timeout=300)
         {
             cfhttpparam(type="header", name="Content-Type", value="application/json");
             cfhttpparam(type="header", name="x-api-key", value=application.symbl);
