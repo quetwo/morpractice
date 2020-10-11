@@ -1,17 +1,11 @@
 <cfparam name="url.id" default="0">
 
-<!---
 <cfset myPhoneNumber = session.usermanager.getUser().getPhoneNumber()>
 
 <cfset interviewSession = invoke("cf.interviewSession","getUserSessionByPhone",{phoneNumber = myPhoneNumber})>
 <cfset telephone = invoke("api.2020-10-10.telephoneIntegration","getAnalysis", {currentQuestionNum=url.id, phoneNumber=myPhoneNumber})>
---->
-
-
-<cfset telephone = '{"messages":[{"id":"6181351629783040","text":"Free coffee for everybody.","from":{},"startTime":"2020-10-11T16:56:32.523Z","endTime":"2020-10-11T16:56:34.223Z","conversationId":"5859292634677248","phrases":[],"sentiment":{"polarity":{"score":0.9},"suggested":"positive"}},{"id":"4812982095708160","text":"That is what we did free coffee for everybody.","from":{},"startTime":"2020-10-11T16:56:34.523Z","endTime":"2020-10-11T16:56:38.223Z","conversationId":"5859292634677248","phrases":[],"sentiment":{"polarity":{"score":0.4},"suggested":"positive"}}]}'>
 
 <cfset myJSON = deserializeJSON(telephone)>
-
 
 <cfinclude template="templates/header.cfm" />
 
