@@ -1,2 +1,2 @@
 <cfset session.userManager.logoutUser()>
-<cflocation	url = "/"/>
+<cflocation	url = "/" addtoken="false"/>
