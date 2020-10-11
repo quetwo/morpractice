@@ -9,30 +9,20 @@
       <p class="lead">When MOR Practice launches you will connect here with live hiring managers to continue practicing interviews.</p>
     </header>
     <div class="row">
-      <div class="col-md-12 g-mb-50 g-mb-0--lg">
+      <div class="col-sm-6 g-mb-50 g-mb-0--lg">
       	<video autoplay="true" id="videoElement" class="u-shadow-v24 g-bg-white rounded g-pa-20"></video>
       </div>
+      <div class="col-sm-6 g-mb-50 g-mb-0--lg" id="interviewResults">
+		<div class="row" id="resultsTableContainer">
+		</div>
+	  </div>
     </div>
   </div>
 </section>
 
-
-<form method="post" format="html" class="g-py-15">
-	<div class="g-mb-60">
-    	<button id="startPracticing" value="val_1" class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13">Start Practicing</button>
-	</div>
-</form>
-
 <cfinclude template="./templates/footer.cfm">
 
 <script>
-$( "#startPracticing" ).click(function(e) {
-	e.preventDefault();
-	$.ajax({url: "/cf/startCall.cfm", success: function(result){
-    	$("#div1").html(result);
-  	}});
-});
-
 var video = document.querySelector("#videoElement");
 
 if (navigator.mediaDevices.getUserMedia) {
@@ -44,4 +34,27 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log("Something went wrong!");
     });
 }
+
+$(document).ready(function()
+{
+	$("#interviewResults").hide();
+	var pageReloader;
+	$.ajax({url: "/cf/startRealCall.cfm", success: function(result)
+		{
+			$("#interviewSelection").hide();
+			$("#interviewResults").show();
+			pageReloader = setInterval(reloadTable, 2000);
+  		}});
+});
+
+function reloadTable()
+{
+	$("#resultsTableContainer").load('/resultsTable.cfm');
+}
+
+function loadDetails(id)
+{
+	window.open('/resultsDetails.cfm?id=' + id, "detailsWindow", "width=800,height=800","yes");
+}
+
 </script>
