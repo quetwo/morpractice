@@ -17,7 +17,6 @@ component
 
     public function submitAnalysis(recordingURL,currentQuestionNum, phoneNumber)
     {
-        checkAuth();
         cfhttp(method="POST", url="https://api.symbl.ai/v1/process/audio/url")
         {
             cfhttpparam(type="header", name="Content-Type", value="application/json");

@@ -52,6 +52,7 @@ component displayname="interview session manager"
             // actually creating a new session.
             myNewSession.user = session.userManager.getUser();
             myNewSession.currentQuestion = 0;
+            myNewSession.currentRecording = 0;
             myNewSession.recordingURL = [];
             myNewSession.conversationID = [];
             myNewSession.currentQuestionList = invoke("api.2020-10-10.questions","getTenQuestions");
