@@ -34,9 +34,8 @@
 
 <section class="g-bg-secondary g-py-100" id="interviewResults">
 	<div class="container">
-		<div class="row">
+		<div class="row" id="resultsTableContainer">
 
-			<h1> results would be here. </h1>
 
 		</div>
 	</div>
@@ -52,11 +51,20 @@ $( "#startPracticing" ).click(function(e)
 		{
 			$("#interviewSelection").hide();
 			$("#interviewResults").show();
+			pageReloader = setInterval(reloadTable, 2000);
   		}});
 });
 
 $(document).ready(function()
 {
 	$("#interviewResults").hide();
-})
+	var pageReloader;
+});
+
+function reloadTable()
+{
+	$("#resultsTableContainer").load('/resultsTable.cfm');
+}
+
+
 </script>
