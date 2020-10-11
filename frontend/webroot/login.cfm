@@ -1,6 +1,6 @@
 <cfinclude template="./templates/header.cfm"> 
     <!-- Login & Signup -->
-    <section class="u-bg-overlay g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_3--after g-py-100" style="background-image: url(../../assets/img-temp/1920x1080/img24.jpg);">
+    <section class="u-bg-overlay g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0_3--after g-py-100" style="background-image: url(../../assets/img/bg/bg-img1.png);">
       <div class="container u-bg-overlay__inner">
         <div class="row justify-content-center text-center mb-5">
           <div class="col-lg-8">
