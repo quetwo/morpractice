@@ -20,6 +20,7 @@
     <cfloop index="i" from="1" to="#arrayLen(myJSON.messages)#">
 
         <cfset score = myJSON.messages[i].sentiment.polarity.score>
+
         <cfif score GT 0>
             <cfset preNeg = 50>
             <cfset Neg = 0>
@@ -28,8 +29,8 @@
             <cfset PosMessage = score>
             <cfset Negmessage = "">
         <cfelse>
-            <cfset preNeg = 0>
-            <cfset Neg = 0>
+            <cfset preNeg = (1+score) * 50>
+            <cfset Neg = abs(score * 50)>
             <cfset Pos = 0>
             <cfset prePos = 0>
             <cfset PosMessage = "">
@@ -53,8 +54,12 @@
         <tr>
             <td>
                 <ul>
-                    <li>This lasted for <cfoutput>#messageTime# seconds.</cfoutput> <cfif messageTime LTE 15>That is a bit short</cfif>  </li>
-                    <li>Feedback 2</li>
+                    <li>This lasted for <cfoutput>#messageTime# seconds.</cfoutput>
+                        <cfif messageTime GTE 60><strong>This might have been a bit long to talk about this.</strong>  You might have been rambling a bit here.</cfif>
+                    </li>
+                    <li><cfif score GT 0>This was seen as a <strong>positive</strong> message.  Positive messages make for positive interviews.<cfelse>This was seen as a negative message.  Try to keep your interviews positive, if possible.</cfif></li>
+                    <li>This didn't include any bad words.  That is a good thing.</li>
+                    <li>This didn't include any humor.  That can be a good thing, as not all humor is taken the same way with all interviews.  This wasn't the question to introduce it.</li>
                 </ul>
             </td>
         </tr>
@@ -62,7 +67,5 @@
     </cfloop>
 
 </table>
-
-<cfdump var="#myJSON.messages#">
 
 <cfinclude template="templates/footer.cfm" />
