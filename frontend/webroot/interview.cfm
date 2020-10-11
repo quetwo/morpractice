@@ -47,12 +47,12 @@
 $( "#startPracticing" ).click(function(e)
 {
 	e.preventDefault();
-	// $.ajax({url: "/cf/startCall.cfm", success: function(result)
-	// 	{
+	$.ajax({url: "/cf/startCall.cfm", success: function(result)
+		{
 			$("#interviewSelection").hide();
 			$("#interviewResults").show();
 			pageReloader = setInterval(reloadTable, 2000);
-  		// }});
+  		}});
 });
 
 $(document).ready(function()

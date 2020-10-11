@@ -3,6 +3,8 @@
 <cfset currentQuestionNumber = interviewSession.currentQuestion>
 <cfset QuestionList = interviewSession.CURRENTQUESTIONLIST>
 
+<cfset currentQuestionNumber = 3>
+
     <table class="table table-bordered table-hover table-striped">
         <thead class="thead-dark">
         <tr>
