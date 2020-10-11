@@ -16,10 +16,8 @@
             <tr <cfif currentQuestionNumber EQ i> class="table-warning" <cfelseif currentQuestionNumber GT i> class="table-secondary" </cfif> >
                 <td>#i#</td>
                 <td>#QuestionList[i].getQuestion()#</td>
-                <td><cfif currentQuestionNumber GT i><i class="icon-eye" data-toggle="tooltip" data-placement="right" title="View your feedback on this item"/></cfif></td>
+                <td class="text-center"><cfif currentQuestionNumber GT i><i class="icon-eye text-body" data-toggle="tooltip" data-placement="right" title="View your feedback on this item" onclick="loadDetails(#i#);"/></cfif></td>
             </tr>
         </cfoutput>
         </cfloop>
     </table>
-
-

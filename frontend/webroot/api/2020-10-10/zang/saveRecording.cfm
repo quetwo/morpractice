@@ -1,5 +1,5 @@
 <cfparam name="form.to" default="+15174322528">
-<cfset interviewSession.currentRecording++>
+<cfset interviewSession.currentRecording = interviewSession.currentRecording +1>
 <cfset interviewSession = invoke("cf.interviewSession","getUserSessionByPhone",{phoneNumber = form.to})>
 <cfif isDefined("form.RecordingUrl")>
     <cfset interviewSession.recordingURL[interviewSession.currentRecording] = form.recordingurl>

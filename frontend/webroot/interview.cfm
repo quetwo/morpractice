@@ -23,7 +23,7 @@
 					<div class="card-header border-dark">Practice Interviewing with somebody</div>
 					<div class="card-body">
 						<p class="card-text">Pair up with a volunteer and get live feedback on how you are doing.</p>
-						<a href="#" class="btn btn-primary">Paired Interview</a>
+						<a href="/interview-live.cfm" class="btn btn-primary">Paired Interview</a>
 					</div>
 				</div>
 			</div>
@@ -47,12 +47,12 @@
 $( "#startPracticing" ).click(function(e)
 {
 	e.preventDefault();
-	$.ajax({url: "/cf/startCall.cfm", success: function(result)
-		{
+	// $.ajax({url: "/cf/startCall.cfm", success: function(result)
+	// 	{
 			$("#interviewSelection").hide();
 			$("#interviewResults").show();
 			pageReloader = setInterval(reloadTable, 2000);
-  		}});
+  		// }});
 });
 
 $(document).ready(function()
@@ -64,6 +64,11 @@ $(document).ready(function()
 function reloadTable()
 {
 	$("#resultsTableContainer").load('/resultsTable.cfm');
+}
+
+function loadDetails(id)
+{
+	window.open('/resultsDetails.cfm?id=' + id, "detailsWindow", "width=800,height=800","yes");
 }
 
 
