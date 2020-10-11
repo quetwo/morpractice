@@ -3,7 +3,7 @@
 
 <head>
   <!-- Title -->
-  <title>Phone Interviewing</title>
+  <title>MorPractice - Practice your interviewing skills!</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -65,11 +65,13 @@
             <!-- Navigation -->
             <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
               <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <cfif session.userManager.isAuthenticated()>
                 <!-- Intro -->
                 <li class="nav-item active g-mx-10--lg g-mx-15--xl">
-                  <a href="interview.cfm" class="nav-link g-py-7 g-px-0">Interview</a>
+                  <a href="interview.cfm" class="nav-link g-py-7 g-px-0">Start Interview</a>
                 </li>
                 <!-- End Intro -->
+                </cfif>
               </ul>
 
             </div>
